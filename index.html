@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,16 @@
     <link rel="stylesheet" href="output.css">
     <script src="script.js" defer></script>
 </head>
-<body class="gradient">
-    <h1 class="flex items-center justify-center text-6xl font-bold mt-20">COUNTER APP</h1>
+
+<body class="bg-linear-to-tr bg-neutral-900 min-h-screen">
+    <h1
+        class="flex items-center justify-center text-6xl font-extrabold mt-16 bg-linear-to-r from-stone-600 via-stone-200 to-stone-600 bg-clip-text text-transparent">
+        COUNTER_APP</h1>
+    <p class="js-result flex items-center justify-center mt-16 text-9xl font-bold text-[300px] text-stone-200">0</p>
+    <div class="flex items-center justify-center gap-14 mt-4">
+        <button class="js-increment text-stone-200 text-5xl border-2 px-10 py-2 pb-4 rounded-2xl transition-colors hover:bg-stone-800" onclick="increment()">+</button>
+        <button class="js-decrement text-stone-200 text-5xl border-2 px-11 py-2 pb-4 rounded-2xl transition-colors hover:bg-stone-800" onclick="decrement()">-</button>
+    </div>
 </body>
+
 </html>
