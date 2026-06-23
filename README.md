@@ -1,5 +1,8 @@
 # Simple Counter App
 
+## 🎮 Live Demo
+You can use the app live here: https://vanshsomal.github.io/Counter-App/
+
 A clean, minimalist, and responsive counter application built to demonstrate core concepts of state management and UI design in **[Insert Language JavaScript]**.
 
 ## 🚀 Features
