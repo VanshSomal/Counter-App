@@ -10,15 +10,45 @@
 </head>
 
 <body class="bg-linear-to-tr bg-neutral-900 min-h-screen">
+    <button id="gearBtn"class="fixed right-5 top-0.5 -translate-y-0.5 transition-transform duration-200 hover:scale-150 pt-2 z-40">⚙️</button>
     <h1
         class="flex items-center justify-center text-6xl font-extrabold mt-16 bg-linear-to-r from-stone-600 via-stone-200 to-stone-600 bg-clip-text text-transparent">
-        COUNTER_APP</h1>
+        COUNTER APP</h1>
     <p class="js-result flex items-center justify-center mt-16 text-9xl font-bold text-[300px] text-stone-200">0</p>
     <div class="flex items-center justify-center gap-14 mt-4">
         <button class="js-increment text-stone-200 text-5xl border-2 px-10 py-2 pb-4 rounded-2xl transition-colors hover:bg-stone-800" onclick="increment()">+</button>
         <button class="js-decrement text-stone-200 text-5xl border-2 px-11 py-2 pb-4 rounded-2xl transition-colors hover:bg-stone-800" onclick="decrement()">-</button>
     </div>
     <p class="js-alert flex items-center justify-center mt-6 text-3xl text-red-600"></p>
+    <div id="modalOverlay" class="hidden fixed inset-0 bg-black/60 z-40 backdrop-blur-sm"></div>
+    
+    <div id="settingsModal" class="hidden fixed inset-0 m-auto h-fit flex flex-col justify-center items-center w-70 bg-neutral-800 border border-stone-700 p-6 rounded-2xl shadow-2xl z-50 gap-2 text-white">
+        <div class="flex justify-center items-center gap-5">
+            <h2 class="flex items-center">Settings</h2>
+            <button id="closeModalBtn"class="flex justify-end rounded-full px-2 border border-stone-200 transition-colors">X</button>
+        </div>
+        <div class="flex flex-col gap-4">
+            <div class="flex justify-center items-center gap-2">
+                <button class="hover:underline">Reset counter : </button>
+                <input placeholder="counter" class="border border-white-500 bg-white  rounded-2xl w-20 px-2 pb-1 text-black focus:outline-none" >
+            </div>
+            <button class="text-left hover:underline">limits Off/On </button>
+            <div class="flex flex-col justify-center items-center">
+                <button class="hover:underline">Change Theme</button>
+                <div class="border border-white grid grid-cols-4 gap-3 p-3 rounded-xl w-fit mt-2">
+                    <div class="bg-red-800 w-5 h-5 rounded"></div>
+                    <div class="bg-blue-800 w-5 h-5 rounded"></div>
+                    <div class="bg-violet-800 w-5 h-5 rounded"></div>
+                    <div class="bg-orange-800 w-5 h-5 rounded"></div>
+                    <div class="bg-blue-800 w-5 h-5 rounded"></div>
+                    <div class="bg-violet-800 w-5 h-5 rounded"></div>
+                    <div class="bg-red-800 w-5 h-5 rounded"></div>
+                    <div class="bg-blue-800 w-5 h-5 rounded"></div>
+                    <div class="bg-violet-800 w-5 h-5 rounded"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
