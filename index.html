@@ -28,14 +28,17 @@
             <button id="closeModalBtn"class="flex justify-end rounded-full px-2 border border-stone-200 transition-colors">X</button>
         </div>
         <div class="flex flex-col gap-4">
-            <div class="flex justify-center items-center gap-2">
-                <button class="hover:underline">Reset counter : </button>
-                <input placeholder="counter" class="border border-white-500 bg-white  rounded-2xl w-20 px-2 pb-1 text-black focus:outline-none" >
+            <div class="flex justify-center items-center gap-2 border border-white rounded-xl p-3">
+                <label for="customerCounterInput" class="text-sm">Set Counter:</label>
+                <input id="customCounterInput" type="number"placeholder="0" class="border border-white-500 bg-white  rounded-2xl w-16 px-2 pb-1 text-black focus:outline-none" >
+                <button id="setCounterBtn"class="hover:underline">Reset counter : </button>
             </div>
-            <button class="text-left hover:underline">limits Off/On </button>
-            <div class="flex flex-col justify-center items-center">
+            <div class="flex justify-center items-center border border-white rounded-xl py-2">
+                <button class="text-left hover:underline">limits Off/On </button>
+            </div>
+            <div class="flex flex-col justify-center items-center border border-white rounded-xl">
                 <button class="hover:underline">Change Theme</button>
-                <div class="border border-white grid grid-cols-4 gap-3 p-3 rounded-xl w-fit mt-2">
+                <div class="grid grid-cols-4 gap-3 p-3  w-fit mt-2">
                     <div class="bg-red-800 w-5 h-5 rounded"></div>
                     <div class="bg-blue-800 w-5 h-5 rounded"></div>
                     <div class="bg-violet-800 w-5 h-5 rounded"></div>
