@@ -9,6 +9,16 @@ function increment(){
     if(stepSize<=0){
         stepSize=1; //Fallback so the app doesn't break or freeze if empty/0
     }
+
+    const limitToggle=document.getElementById('limit-toggle');
+    if(limitToggle && limitToggle.checked){
+        const maxInput=document.getElementById('max-input');
+        const maxLimit=Number(maxInput.value);
+        if(result + stepSize>maxLimit){
+            document.querySelector('.js-alert').innerHTML="Reached maximum limit!";
+            return;
+        }
+    }
     // 3. Instead of result++, add the dynamic step size.
     result=result+stepSize;
     document.querySelector('.js-alert').innerHTML = "";
@@ -32,6 +42,7 @@ function decrement(){
         return;
     }
         result=result-stepSize;
+        document.querySelector('.js-alert').innerHTML="";
         document.querySelector('.js-result').innerHTML=result;
 }
 
@@ -59,3 +70,18 @@ gearBtn.addEventListener('click',openSettings);
 closeModalBtn.addEventListener('click',closeSettings);
 modalOverlay.addEventListener('click',closeSettings); //close menu if clicking outside teh box
 
+const limitToggle=document.getElementById('limit-toggle');
+const limitInputContainer=document.getElementById('limit-input-container');
+const statusOff=document.getElementById('status-off');
+const statusOn=document.getElementById('status-on');
+limitToggle.addEventListener('change',function(){
+    if(this.checked){
+        limitInputContainer.classList.remove('hidden');
+        statusOn.className="underline decoration-white underline-offset-4";
+        statusOff.className="text-stone-400 no-underline";
+    }else {
+        limitInputContainer.classList.add('hidden');
+        statusOff.className="underline decoration-white underline-offset-4";
+        statusOn.className="text-stone-400 no-underline";
+    }
+});
