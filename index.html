@@ -23,7 +23,7 @@
     <div id="modalOverlay" class="hidden fixed inset-0 bg-black/60 z-40 backdrop-blur-sm"></div>
     
     <div id="settingsModal" class="hidden fixed inset-0 m-auto h-fit flex flex-col justify-center items-center w-70 bg-neutral-800 border border-stone-700 p-6 rounded-2xl shadow-2xl z-50 gap-2 text-white">
-        <div class="flex justify-center items-center gap-5">
+        <div class="flex justify-center items-center gap-10">
             <h2 class="flex items-center">Settings</h2>
             <button id="closeModalBtn"class="flex justify-end rounded-full px-2 border border-stone-200 transition-colors">X</button>
         </div>
@@ -32,8 +32,23 @@
                 <label for="customerCounterInput" class="text-sm">Set Counter:</label>
                 <input id="customCounterInput" type="number"placeholder="0" class="border border-white-500 bg-white  rounded-2xl w-16 px-2 pb-1 text-black focus:outline-none" >
             </div>
-            <div class="flex justify-center items-center border border-white rounded-xl py-2">
-                <button class="text-left hover:underline">limits Off/On </button>
+            <div class="flex flex-col border border-white rounded-xl p-3 gap-3 w-56">
+                <div class="flex items-center justify-between text-sm select-none">
+                    <span>
+                        Limits
+                        <span id="status-off" class="underline decoration-white underline-offset-4">Off</span> /
+                        <span id="status-on" class="text-stone-400">On</span>
+                    </span>
+                    <label class="relative inline-block w-10 h-5 cursor-pointer">
+                        <input type="checkbox" id="limit-toggle" class="peer sr-only">
+                        <span class="absolute inset-0 rounded-full border border-white bg-transparent transition-colors duration-200"></span>
+                        <span class="absolute left-0.75 top-0.75 h-3 w-3 rounded-full bg-white transition-transform duration-200 peer-checked:translate-x-5"></span>
+                    </label>
+                </div>
+                <div id="limit-input-container" class="hidden flex items-center justify-between text-sm">
+                    <label for="max-input">Maximum =</label>
+                    <input type="number" id="max-input" value="1" min="1" class="w-16 rounded-xl bg-white px-2 py-0.5 text-center text-black focus:outline-none">
+                </div>
             </div>
             <div class="flex flex-col justify-center items-center border border-white rounded-xl">
                 <button class="hover:underline">Change Theme</button>
