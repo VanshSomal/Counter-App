@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+/* 1. Register your variable names with Tailwind */
+@theme {
+  --color-theme-start: #171717; /* Default fallback (neutral-900) */
+  --color-theme-end: #262626;   /* Default fallback (neutral-800) */
+}
+
+/* 2. Standard CSS mapping based on data-theme attributes */
+[data-theme="red"] { --color-theme-start: #7f1d1d; --color-theme-end: #450a0a; }
+[data-theme="lime"] { --color-theme-start: #3f6212; --color-theme-end: #1a2e05; }
+[data-theme="indigo"] { --color-theme-start: #312e81; --color-theme-end: #1e1b4b; }
+[data-theme="taupe"] { --color-theme-start: #292524; --color-theme-end: #1c1917; }
+[data-theme="blue"] { --color-theme-start: #1e3a8a; --color-theme-end: #172554; }
+[data-theme="mist"] { --color-theme-start: #334155; --color-theme-end: #0f172a; }
+[data-theme="olive"] { --color-theme-start: #3f3f46; --color-theme-end: #18181b; }
+[data-theme="fuchsia"] { --color-theme-start: #86198f; --color-theme-end: #4a044e; }
+[data-theme="emerald"] { --color-theme-start: #065f46; --color-theme-end: #022c22; }
+
+/* 3. Apply variables to your layout */
+#body {
+  background-image: linear-gradient(to top right, var(--color-theme-start), var(--color-theme-end));
+  transition: background-image 0.4s ease, background-color 0.4s ease;
+}

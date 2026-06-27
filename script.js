@@ -85,3 +85,14 @@ limitToggle.addEventListener('change',function(){
         statusOn.className="text-stone-400 no-underline";
     }
 });
+
+
+// Color Theme of APP
+const color=document.getElementById('js-red');
+const bodyColor=document.getElementById('body')
+function changeTheme(themeName){
+    // Select the body element
+    const bodyColor=document.getElementById('body');
+    // Set then data-theme attribute (e.g. data-theme="red")
+    bodyColor.setAttribute('data-theme',themeName);
+}
